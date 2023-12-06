@@ -30,24 +30,19 @@ export default function List({taskData} : any) {
 
   return (
     <ul className={styles.myList}>
-      {taskData.map((todo : any, index : number) => ( // Look at the types and change them
+      {taskData.map((todo: any, index: number) => (
         <li key={todo.id}>
           <ListItem className={index < taskData.length ? "todoActive" : "todoInactive"} todo={todo}>
             {todo.title}
-            {/* <Image 
-              src={todo.completed ? checkboxTicked : checkboxUnticked}
-              alt="Trash-icon"
-              height={27} */}
-              {/* /> */}
           </ListItem>
         </li>
       ))}
-      {/* Render additional inactive items if there are less than maxTasks */}
-      {Array.from({ length: Math.max(0, maxTasks - taskData.length) }).map((_, index) => (
-        <li key={`empty-${index}`}>
-            <EmptyListItem />
+      {/* Render an inactive item only if there are less than maxTasks */}
+      {taskData.length < maxTasks && (
+        <li key={`empty-0`}>
+          <EmptyListItem />
         </li>
-      ))}
+      )}
     </ul>
   );
 }
