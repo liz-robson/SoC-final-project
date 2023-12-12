@@ -3,6 +3,8 @@ import PlantPotImg from "public/plants/cheeseplant-1.svg";
 import Cheeseplant7Img from "public/plants/cheeseplant-7.svg";
 import Cheeseplant10Img from "public/plants/cheeseplant-10.svg";
 import { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import flowerAnimation from "../../public/plants/flower-tall-full.json";
 
 export default function Plant({ score }: any) {
   // we need the plant to have the initial state of "a plant pot"
@@ -22,12 +24,7 @@ export default function Plant({ score }: any) {
   }, [score]);
   return (
     <>
-      <Image
-        src={plantImage}
-        alt="This is an image of a plant"
-        width={250}
-        height={250}
-      />
+      return <Lottie animationData={flowerAnimation} />
     </>
   );
 }
