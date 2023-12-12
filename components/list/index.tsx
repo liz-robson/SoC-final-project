@@ -1,27 +1,29 @@
 import EmptyListItem from "../emptyListItem";
-import ListItem from "../listItem"
-import styles from './list.module.css'
+import ListItem from "../listItem";
+import styles from "./list.module.css";
 
-export default function List({taskData , addNewData, armDelete} : any) {
+export default function List({ taskData }: any) {
   const maxTasks = 5; // Maximum number of tasks to display
 
   //write a function that changes the completed bit
 
   return (
     <ul className={styles.myList}>
-      {taskData.map((todo : any) => ( // Look at the types and change them
-        <li key={todo.id}>
-          <ListItem todo={todo} armDelete={armDelete}>
-            {todo.title}
-          </ListItem>
-        </li>
-      ))}
+      {taskData.map(
+        (
+          todo: any // Look at the types and change them
+        ) => (
+          <li key={todo.id}>
+            <ListItem todo={todo}>{todo.habit_name}</ListItem>
+          </li>
+        )
+      )}
       {/* Render additional inactive items if there are less than maxTasks */}
-      {maxTasks > taskData.length &&
+      {/* {maxTasks > taskData.length &&
         <li>
             <EmptyListItem addNewData={addNewData} taskData={taskData}/>
         </li>
-      }
+      } */}
     </ul>
   );
 }

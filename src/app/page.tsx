@@ -1,4 +1,4 @@
-"use client" 
+"use client";
 import React from "react";
 import Home from "../../components/homepage/index";
 import MyList from "../../components/myList/index";
@@ -15,41 +15,54 @@ interface Habit {
   completed: boolean;
 }
 
-  export default function Parent() {
-    const [habitData, setHabitData] = useState<Habit[] | null>(null);
-    const [isMyListVisible, setIsMyListVisible] = useState<boolean>(false);
-    const [variable, setVariable] = useState(false)
-  
-    useEffect(() => {
-      const getData = async () => {
-        const { data, error } = await supabase
-          .from("habit_table")
-          .select("*");
-        console.log({data, error});
-        setHabitData(data);
-      };
-      getData();
-    }, []);
+export default function Parent() {
+  const [habitData, setHabitData] = useState<Habit[] | null>(null);
+  const [isMyListVisible, setIsMyListVisible] = useState<boolean>(false);
+  const [variable, setVariable] = useState(false);
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data, error } = await supabase.from("habit_table").select("*");
+      console.log({ data, error });
+      setHabitData(data);
+    };
+    getData();
+  }, []);
+
+    const { addNewData, error } = await supabase
+    .from('habit_table')
+    .insert([
+      { habit_name: habitName, completed: false },
+    ])
+    .select()
+  };
 
 
   const handleMainBtnClick = () => {
     setIsMyListVisible(!isMyListVisible);
   };
-  
 
-  function toggleVarible() : any{
-    setVariable(!variable)
+  function toggleVarible(): any {
+    setVariable(!variable);
   }
   return (
     <>
-       {/* <pre>{JSON.stringify(habitData, null, 2)}</pre> */}
-      {isMyListVisible ? <MyList toggleVariable={toggleVarible} variable={variable} /> : <Home />}
+      {/* <pre>{JSON.stringify(habitData, null, 2)}</pre> */}
+      {isMyListVisible ? (
+        <MyList
+          toggleVariable={toggleVarible}
+          variable={variable}
+          habitData={habitData}
+        />
+      ) : (
+        <Home />
+      )}
       <MainBtn isMyListPage={isMyListVisible} onClick={handleMainBtnClick} />
     </>
   );
 }
-  // here will be the state and based on the state change the homepage will be rendered or the MyList
-  // as default it will be the homepage(then changed with login page)
-  //onclick of the MainBttn the state changes to MyList
+// here will be the state and based on the state change the homepage will be rendered or the MyList
+// as default it will be the homepage(then changed with login page)
+//onclick of the MainBttn the state changes to MyList
 
 // type Habit = Database["public"]["Tables"]["habit_table"]["Row"];

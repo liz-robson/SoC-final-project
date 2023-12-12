@@ -6,17 +6,11 @@ import { useState } from "react";
 import Link from "next/link";
 import RoutineForm from "../defineRoutine";
 
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-let taskDataOriginal: Task[] = [
-  { id: 1, title: "20 minutes yoga session", completed: true },
-  { id: 2, title: "meditate", completed: true },
-  { id: 3, title: "gratitude journal", completed: false },
-];
+// let taskDataOriginal: Task[] = [
+//   // { id: 1, title: "20 minutes yoga session", completed: true },
+//   // { id: 2, title: "meditate", completed: true },
+//   // { id: 3, title: "gratitude journal", completed: false },
+// ];
 
 // interface DeleteBtnProps {
 //   armDelete: boolean;
@@ -26,13 +20,9 @@ let taskDataOriginal: Task[] = [
 //   armDelete: false
 // }
 
-export default function MyList({toggleVariable, variable} :any) {
-  const [taskData, setTaskData] = useState<Task[]>(taskDataOriginal);
-  
+export default function MyList({ toggleVariable, variable, habitData }: any) {
+  // const [taskData, setTaskData] = useState<Task[]>(habitData);
 
-  const addNewData = (todo: Task) => {
-    setTaskData([...taskData, todo]);
-  };
   // Set state of armDelete - default false
   const [armDelete, setArmDelete] = useState(false);
 
@@ -42,7 +32,7 @@ export default function MyList({toggleVariable, variable} :any) {
     console.log(armDelete);
   };
 
-  return ( variable ?
+  return variable ? (
     <>
       <div>
         {/* pass down the armDelete to DelToDo */}
@@ -55,7 +45,8 @@ export default function MyList({toggleVariable, variable} :any) {
       <div className="btn-container">
         {/* <DelToDoBtn handleArmDelete={handleArmDelete} /> */}
       </div>
-    </> :
-    <RoutineForm toggleVariable = {toggleVariable} variable={variable} />
+    </>
+  ) : (
+    <RoutineForm toggleVariable={toggleVariable} variable={variable} />
   );
 }
