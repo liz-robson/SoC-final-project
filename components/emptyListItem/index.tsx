@@ -19,8 +19,11 @@ export default function EmptyListItem({ addNewData, taskData }: any) {
 
   function handleEnterKey(e: any) {
     if (e.key === "Enter") {
-      const habitName = inputValue;
-      addNewData(habitName);
+      const element = {
+        habit_id: taskData.length + 1,
+        habit_name: inputValue,
+      };
+      addNewData(element);
       setAdd(!add);
     }
   }

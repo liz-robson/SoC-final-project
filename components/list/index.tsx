@@ -13,7 +13,7 @@ export default function List({ taskData }: any) {
         (
           todo: any // Look at the types and change them
         ) => (
-          <li key={todo.id}>
+          <li key={todo.habit_id}>
             <ListItem todo={todo}>{todo.habit_name}</ListItem>
           </li>
         )

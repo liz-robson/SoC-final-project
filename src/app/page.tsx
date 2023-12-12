@@ -29,14 +29,13 @@ export default function Parent() {
     getData();
   }, []);
 
-    const { addNewData, error } = await supabase
-    .from('habit_table')
-    .insert([
-      { habit_name: habitName, completed: false },
-    ])
-    .select()
-  };
-
+  //   const { addNewData, error } = await supabase
+  //   .from('habit_table')
+  //   .insert([
+  //     { habit_name: habitName, completed: false },
+  //   ])
+  //   .select()
+  // };
 
   const handleMainBtnClick = () => {
     setIsMyListVisible(!isMyListVisible);

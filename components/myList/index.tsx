@@ -19,9 +19,17 @@ import RoutineForm from "../defineRoutine";
 // let deleteState = {
 //   armDelete: false
 // }
+interface Habit {
+  habit_id: string;
+  habit_name: string;
+  created_at: string;
+  completed: boolean;
+}
+
+const task = [];
 
 export default function MyList({ toggleVariable, variable, habitData }: any) {
-  // const [taskData, setTaskData] = useState<Task[]>(habitData);
+  const [taskData, setTaskData] = useState<Habit[]>(task);
 
   // Set state of armDelete - default false
   const [armDelete, setArmDelete] = useState(false);
@@ -32,6 +40,10 @@ export default function MyList({ toggleVariable, variable, habitData }: any) {
     console.log(armDelete);
   };
 
+  function addNewData(habit: Habit) {
+    setTaskData([...taskData, habit]);
+  }
+  console.log(taskData);
   return variable ? (
     <>
       <div>
