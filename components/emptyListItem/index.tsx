@@ -1,11 +1,17 @@
 import Image from "next/image";
 import plusIcon from "../../public/icons/empty-list-plus-icon.svg";
 import styles from "../emptyListItem/emptyListItem.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function EmptyListItem({ addNewData, taskData }: any) {
   const [add, setAdd] = useState(true);
-  const [inputValue, setInputValue] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    if (add) {
+      setInputValue("");
+    }
+  }, [add]);
 
   // updating the state of the edit to display the input
   function handleAdd() {
@@ -29,17 +35,14 @@ export default function EmptyListItem({ addNewData, taskData }: any) {
     }
   }
 
-  return add ? (
-    <div className={styles.emptyListItem} onClick={handleAdd}>
-      <Image src={plusIcon} alt="Plus-icon" height={15} />
-    </div>
-  ) : (
+  return (
     <input
-      className={styles.emptyListItem} // it suppose to be the class "listInput"
+      className={styles.emptyListItem}
       type="text"
       onChange={handleInputValue}
       onKeyDown={handleEnterKey}
       placeholder="Please enter your habit"
+      value={inputValue}
     />
   );
 }
