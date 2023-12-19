@@ -6,6 +6,8 @@ import ActiveList from "../../components/ActiveList";
 import { useState, useEffect } from "react";
 import MainBtn from "../../components/MainBtn";
 import supabase from "../../lib/initSupabase";
+import {InstapaperShareButton, LinkedinShareButton, FacebookShareButton, TwitterShareButton} from "react-share";
+import {InstapaperIcon, LinkedinIcon, FacebookIcon, TwitterIcon} from "react-share";
 
 interface Habit {
   habit_id: string;
@@ -101,12 +103,23 @@ export default function Parent() {
           </div>
         )
       ) : (
+        <>
         <Home
           habitLogsArray={habitLogsArray}
           habitData={habitData}
           goodLuck={goodLuck}
           toggleGoodLuck={toggleGoodLuck}
         />
+        <FacebookShareButton url={"http://127.0.0.1:5500/habitap/public/plants/cheeseplant-10.svg"} title="Check out my plant!">
+        <FacebookIcon size={32} round={true}/>
+        </FacebookShareButton>
+        <TwitterShareButton url={"http://127.0.0.1:5500/habitap/public/plants/cheeseplant-10.svg"} title="Check out my plant!">
+        <TwitterIcon size={32} round={true}/>
+        </TwitterShareButton>
+        <LinkedinShareButton url={"http://127.0.0.1:5500/habitap/public/plants/cheeseplant-10.svg"} title="Check out my plant!">
+        <LinkedinIcon size={32} round={true}/>
+        </LinkedinShareButton>
+        </>
       )}
       <MainBtn isMyListPage={isMyListVisible} onClick={handleMainBtnClick} />
     </>
