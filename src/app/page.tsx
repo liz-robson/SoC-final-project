@@ -6,6 +6,7 @@ import ActiveList from "../../components/ActiveList";
 import { useState, useEffect } from "react";
 import MainBtn from "../../components/MainBtn";
 import supabase from "../../lib/initSupabase";
+import { Session } from "@supabase/supabase-js";
 
 import { useRouter } from "next/navigation";
 
@@ -36,6 +37,7 @@ export default function Parent() {
   const [date, setDate] = useState(false); // It seems you're not using this state
   const [habitLogsArray, setHabitLogsArray] = useState<HabitLog[] | null>(null);
   const [goodLuck, setGoodLuck] = useState<any>(false);
+  const [session, setSession] = useState<Session | null>(null);
 
   let router = useRouter();
 
@@ -44,7 +46,14 @@ export default function Parent() {
     if (isLoggedIn === "false" || null) {
       router.push("/authentication");
     }
-  }, [router]);
+  }, [router, session]);
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    localStorage.setItem("isLoggedIn", "false");
+    console.log(session);
+    setSession(null);
+  }
 
   function toggleGoodLuck() {
     setGoodLuck(!goodLuck);
@@ -161,6 +170,7 @@ export default function Parent() {
     console.log("Percentage Decimal:", percentageDecimal);
   };
 
+
   // Render the component
   return (
     <>
@@ -219,6 +229,7 @@ export default function Parent() {
       )}
       {/* Render MainBtn component */}
       <MainBtn isMyListPage={isMyListVisible} onClick={handleMainBtnClick} />
+      <button onClick={handleLogout}>Log out</button>
       {/* <Login /> */}
     </>
   );

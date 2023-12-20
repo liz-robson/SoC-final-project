@@ -24,7 +24,9 @@ export default function Login() {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (session) {
+        console.log(session);
         router.push("/");
+    
       }
     });
 
@@ -32,17 +34,12 @@ export default function Login() {
   }, [router]);
 
 
-  async function handleLogout() {
-    await supabase.auth.signOut();
-    setSession(null);
-  }
   if (!session) {
     return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }}/>;
   } else {
     return (
       <>
         <div>Logged in!</div>
-        <button onClick={handleLogout}>Log out</button>
       </>
     );
   }
