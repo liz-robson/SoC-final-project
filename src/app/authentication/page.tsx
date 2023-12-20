@@ -24,7 +24,11 @@ export default function Login() {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (session) {
-        console.log(session);
+
+        console.log(session)
+        localStorage.setItem("user_id", session.user.id)
+
+        localStorage.setItem("user_email", session.user.email)
         router.push("/");
     
       }

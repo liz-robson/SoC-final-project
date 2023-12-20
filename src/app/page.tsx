@@ -38,21 +38,26 @@ export default function Parent() {
   const [habitLogsArray, setHabitLogsArray] = useState<HabitLog[] | null>(null);
   const [goodLuck, setGoodLuck] = useState<any>(false);
   const [session, setSession] = useState<Session | null>(null);
+  const [toggleToLog, settoggleToLog] = useState(true)
 
   let router = useRouter();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") || null;
+    const user_id = localStorage.getItem("user_id") || null;
+    const user_email = localStorage.getItem("user_email") || null;
     if (isLoggedIn === "false" || null) {
       router.push("/authentication");
     }
-  }, [router, session]);
+    console.log(`This is my user id: ${user_id} and this is my email ${user_email}`)
+  }, [router, toggleToLog]);
 
   async function handleLogout() {
     await supabase.auth.signOut();
     localStorage.setItem("isLoggedIn", "false");
     console.log(session);
     setSession(null);
+    settoggleToLog(!toggleToLog)
   }
 
   function toggleGoodLuck() {
