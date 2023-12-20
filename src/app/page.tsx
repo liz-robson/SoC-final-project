@@ -5,9 +5,9 @@ import NewRoutineForm from "../../components/NewRoutineForm";
 import ActiveList from "../../components/ActiveList";
 import { useState, useEffect } from "react";
 import MainBtn from "../../components/MainBtn";
-import supabase from "../../lib/initSupabase";
-
+import supabase from "../../supabase/initSupabase";
 import { useRouter } from "next/navigation";
+
 
 // import Login from "../../lib/auth/login";
 

@@ -1,6 +1,6 @@
 import styles from "./InstructionPopup.module.css";
 import Image from "next/image";
-import supabase from "../../lib/initSupabase";
+import supabase from "../../supabase/initSupabase";
 
 export default function EndingPopup({
   tenDaysPassed,

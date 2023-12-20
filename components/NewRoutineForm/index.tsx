@@ -5,7 +5,7 @@ import NewRoutineList from "../NewRoutineList/index";
 import { useState } from "react";
 import styles from "./page.module.css";
 import Popup from "../popup/index";
-import supabase from "../../lib/initSupabase";
+import supabase from "../../supabase/initSupabase";
 import InstructionPopup from "../instructionPopup/index";
 
 interface Task {
