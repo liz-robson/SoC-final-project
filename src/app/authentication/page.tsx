@@ -26,9 +26,7 @@ export default function Login() {
       if (session) {
 
         console.log(session)
-        localStorage.setItem("user_id", session.user.id)
 
-        localStorage.setItem("user_email", session.user.email)
         router.push("/");
     
       }

@@ -39,17 +39,20 @@ export default function Parent() {
   const [goodLuck, setGoodLuck] = useState<any>(false);
   const [session, setSession] = useState<Session | null>(null);
   const [toggleToLog, settoggleToLog] = useState(true)
+ 
+
 
   let router = useRouter();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") || null;
-    const user_id = localStorage.getItem("user_id") || null;
-    const user_email = localStorage.getItem("user_email") || null;
+  
+  
+    //const user_email = localStorage.getItem("user_email") || null;
     if (isLoggedIn === "false" || null) {
       router.push("/authentication");
     }
-    console.log(`This is my user id: ${user_id} and this is my email ${user_email}`)
+    //console.log(`This is my user id: ${user_id} and this is my email ${user_email}`)
   }, [router, toggleToLog]);
 
   async function handleLogout() {
