@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import MainBtn from "../../components/MainBtn";
 import supabase from "../../supabase/initSupabase";
 import { useRouter } from "next/navigation";
+import AuthForm from "./auth-form";
 
 
 // import Login from "../../lib/auth/login";

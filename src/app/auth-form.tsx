@@ -13,7 +13,7 @@ export default function AuthForm() {
       appearance={{ theme: ThemeSupa }}
       theme="dark"
       providers={[]}
-      redirectTo="http://localhost:3000/"
+      redirectTo="http://localhost:3000/auth/callback"
     />
   )
 }
