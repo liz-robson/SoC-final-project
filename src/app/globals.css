@@ -17,7 +17,6 @@
   align-items: center;
 }
 
-
 body {
   border: 2px solid lime;
 }
@@ -118,13 +117,15 @@ body {
   width: 100px;
   background-color: #77c47e;
   border: none;
-  border-radius:50px;
+  border-radius: 50px;
   font-size: 1.3rem;
   color: white;
 }
 
 .midBtn:focus {
   box-shadow: 0 0 15px rgb(173, 173, 173);
+  background-color: red;
+  border: 2px solid orange;
 }
 
 .midBtn:hover {

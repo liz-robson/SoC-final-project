@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useRef, useEffect } from "react";
+import FocusTrap from "focus-trap-react";
 
 interface PopupProps {
   linkToMyList: () => void;
@@ -27,21 +29,28 @@ const Popup: React.FC<PopupProps> = ({
 
   return (
     // returns a popup with a message based on the users choices and two buttons
-    <div
-      className={"popup ready-popup"}
-      style={{ display: toggleData ? "flex" : "none" }}
-    >
-      <h3>Ready to commit?</h3>
-      <p>You&apos;re committing to {taskData.length} habits for 10 days.</p>
-      <div className={"popupBtnContainer"}>
-      <div className={"midBtn"} onClick={handleYesButtonClick}>
-          Yes
-        </div>
-        <div className={"midBtn"} onClick={confirmData}>
-          No
+    <FocusTrap focusTrapOptions={{ initialFocus: "#yesbttn" }}>
+      <div
+        className={"popup ready-popup"}
+        style={{ display: toggleData ? "flex" : "none" }}
+      >
+        <h3>Ready to commit?</h3>
+        <p>You&apos;re committing to {taskData.length} habits for 10 days.</p>
+        <div tabIndex={0} className={"popupBtnContainer"}>
+          <button
+            className={"midBtn"}
+            id="yesbttn"
+            onClick={handleYesButtonClick}
+            tabIndex={1}
+          >
+            Yes
+          </button>
+          <button className={"midBtn"} onClick={confirmData} tabIndex={2}>
+            No
+          </button>
         </div>
       </div>
-    </div>
+    </FocusTrap>
   );
 };
 
