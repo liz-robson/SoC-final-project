@@ -4,6 +4,7 @@ import { Database } from '../supabase.database.types'
 import AuthForm from '../auth-form'
 
 export default async function Login() {
+
   // const supabase = createServerComponentClient<Database>({ cookies })
 
   // const {
