@@ -23,6 +23,9 @@ export default function AuthForm() {
     return () => subscription.unsubscribe();
   });
 
+  
+  
+
   return (
     <Auth
       supabaseClient={supabase}

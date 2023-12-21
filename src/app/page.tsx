@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Home from "../../components/homepage/index";
 import NewRoutineForm from "../../components/NewRoutineForm";
 import ActiveList from "../../components/ActiveList";
@@ -7,10 +8,6 @@ import { useState, useEffect } from "react";
 import MainBtn from "../../components/MainBtn";
 import supabase from "../../supabase/initSupabase";
 import { useRouter } from "next/navigation";
-import AuthForm from "./auth-form";
-
-
-// import Login from "../../lib/auth/login";
 
 import EndingPopup from "../../components/EndingPopup";
 
@@ -39,13 +36,31 @@ export default function Parent() {
   const [goodLuck, setGoodLuck] = useState<any>(false);
 
   let router = useRouter();
+  
+  // useEffect(() => {
+  //   const isLoggedIn = localStorage.getItem("isLoggedIn") || null;
+  //   if (isLoggedIn === "false" || null) {
+  //     router.push("/authentication");
+  //   }
+  // }, [router]);
+
+
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+
+  const supabase = createClientComponentClient();
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn") || null;
-    if (isLoggedIn === "false" || null) {
-      router.push("/authentication");
-    }
-  }, [router]);
+      async function getUser(){
+          const {data: {user}} = await supabase.auth.getUser()
+          setUser(user)
+          setLoading(false)
+      }
+      getUser();
+      console.log(user)
+  }, [])
+
 
   function toggleGoodLuck() {
     setGoodLuck(!goodLuck);
