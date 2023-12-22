@@ -6,17 +6,8 @@ import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 
 
 
-export default async function Login(req, res) {
-  const cookieStore = cookies()
+export default async function Login() {
 
-  const supabase = createRouteHandlerClient({ cookies: () => cookieStore })
-
-  // Handle login logic and obtain the session data
-  const { email, password } = req.body
-  const { user, session, error } = await supabase.auth.signIn({ email, password })
-
-  // Pass the session data to the client-side homepage
-  res.redirect(302, '/?session=' + JSON.stringify(session))
   return <AuthForm />
 }
 

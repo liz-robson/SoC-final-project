@@ -13,11 +13,14 @@ export default function AuthForm() {
   const router = useRouter();
 
   useEffect(() => {
+    localStorage.setItem('isLoggedIn', 'false')
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_IN") {
-        router.push('/');
+        localStorage.setItem('isLoggedIn', 'true')
+        setTimeout(()=> {router.push('/')}, 500 )
+        ;
       }
     });
     return () => subscription.unsubscribe();

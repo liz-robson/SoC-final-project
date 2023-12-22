@@ -30,7 +30,7 @@ const ActiveListItem: React.FC<ListItemProps> = ({ children, className, todo, da
       const { data, error } = await supabase
   .from('habit_log')
   .insert([
-    { habit_id: todo.habit_id, user_id: 1},
+    { habit_id: todo.habit_id, user_id: 1}, //user_id ++++++++++++++++++++++++++++++++++++++++
   ])
     }
     else {

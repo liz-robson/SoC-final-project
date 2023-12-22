@@ -55,7 +55,7 @@ export default function NewRoutineForm({
 
     if (data) {
       const getData = async () => {
-        const { data, error } = await supabase.from("habit_table").select("*");
+        const { data, error } = await supabase.from("habit_table").select("*")//use user_id; ++++++++++++++++++++++++++
       };
       getData();
     }

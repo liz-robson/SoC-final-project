@@ -16,7 +16,7 @@ export default function EndingPopup({
       const { error: deleteLogError } = await supabase
       .from("habit_log")
       .delete()
-      .eq("user_id", "1");
+      .eq("user_id", "1");// use user_ID ++++++++++++++++++++++++++++++++++++++++
 
     if (deleteLogError) {
       console.error("Error deleting habit_log records:", deleteLogError);
@@ -27,7 +27,7 @@ export default function EndingPopup({
     const { error: deleteError } = await supabase
       .from("habit_table")
       .delete()
-      .eq("user_id", "1");
+      .eq("user_id", "1"); //user_id +++++++++++++++++++++++++++++++++++++++++
 
     if (deleteError) {
       console.error("Error deleting habit_table records:", deleteError);
