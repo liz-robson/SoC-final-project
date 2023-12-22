@@ -2,12 +2,14 @@
   "name": "habitap",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "resetdb": "node scripts/resetDB.js"
   },
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.6",
