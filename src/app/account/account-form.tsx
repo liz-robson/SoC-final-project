@@ -2,14 +2,14 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Database } from '../supabase.database.types'
 import { Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import styles from './account.module.css'
 
 export default function AccountForm({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient<Database>()
   const [loading, setLoading] = useState(true)
-  const [fullname, setFullname] = useState<string | null>(null)
+  const [firstname, setFirstname] = useState<string | null>(null)
+  const [lastname, setLastname] = useState<string | null>(null)
   const [username, setUsername] = useState<string | null>(null)
-  const [website, setWebsite] = useState<string | null>(null)
-  const [avatar_url, setAvatarUrl] = useState<string | null>(null)
   const user = session?.user
 
   const getProfile = useCallback(async () => {
@@ -18,7 +18,7 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
       const { data, error, status } = await supabase
         .from('profiles')
-        .select(`full_name, username, website, avatar_url`)
+        .select(`first_name, last_name, username`)
         .eq('id', user?.id)
         .single()
 
@@ -27,10 +27,9 @@ export default function AccountForm({ session }: { session: Session | null }) {
       }
 
       if (data) {
-        setFullname(data.full_name)
+        setFirstname(data.first_name)
+        setLastname(data.last_name)
         setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
       }
     } catch (error) {
       alert('Error loading user data!')
@@ -45,23 +44,21 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
   async function updateProfile({
     username,
-    website,
-    avatar_url,
+    firstname,
+    lastname,
   }: {
     username: string | null
-    fullname: string | null
-    website: string | null
-    avatar_url: string | null
+    firstname: string | null
+    lastname: string | null
   }) {
     try {
       setLoading(true)
 
       const { error } = await supabase.from('profiles').upsert({
         id: user?.id as string,
-        full_name: fullname,
+        first_name: firstname,
+        last_name: lastname,
         username,
-        website,
-        avatar_url,
         updated_at: new Date().toISOString(),
       })
       if (error) throw error
@@ -74,18 +71,29 @@ export default function AccountForm({ session }: { session: Session | null }) {
   }
 
   return (
-    <div className="form-widget">
+    <>
+    <div>{firstname ? <h1>Hi {firstname},</h1> : null}</div>
+    <div className={styles.formWidget}>
       <div>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="fullName">Full Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input
-          id="fullName"
+          id="firstName"
           type="text"
-          value={fullname || ''}
-          onChange={(e) => setFullname(e.target.value)}
+          value={firstname || ''}
+          onChange={(e) => setFirstname(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          value={lastname || ''}
+          onChange={(e) => setLastname(e.target.value)}
         />
       </div>
       <div>
@@ -98,19 +106,9 @@ export default function AccountForm({ session }: { session: Session | null }) {
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
-
-      <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ fullname, username, website, avatar_url })}
+          onClick={() => updateProfile({ firstname, lastname, username })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
@@ -125,5 +123,6 @@ export default function AccountForm({ session }: { session: Session | null }) {
         </form>
       </div>
     </div>
+    </>
   )
 }
