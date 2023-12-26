@@ -107,17 +107,16 @@ export default function AccountForm({ session }: { session: Session | null }) {
       </div>
       <div>
         <button
-          className="button primary block"
+          className="midBtn updateBtn"
           onClick={() => updateProfile({ firstname, lastname, username })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
         </button>
       </div>
-
       <div>
         <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
+          <button className="midBtn signOutBtn" type="submit">
             Sign out
           </button>
         </form>

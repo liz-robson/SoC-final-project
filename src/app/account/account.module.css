@@ -11,3 +11,10 @@
     padding-right: 12px;
 }
 
+.signOutBtn {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+}
