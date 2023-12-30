@@ -19,7 +19,8 @@ export default function AuthForm() {
     } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_IN") {
         localStorage.setItem('isLoggedIn', 'true')
-        setTimeout(()=> {router.push('/')}, 500 )
+        setTimeout(()=> {router.push('/')}, 500)
+        
         ;
       }
     });

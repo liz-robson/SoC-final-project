@@ -80,6 +80,7 @@ export default function HomeClientSide({session} : any) {
     };
     getData();
     const parsedSession = JSON.parse(session.value)
+    console.log(session)
     const user_id = parsedSession?.user?.id
     console.log(user_id)//+++++++++++++++++++++++++++++++++++++++++
     // console.log(session.value.split(',')[7])
