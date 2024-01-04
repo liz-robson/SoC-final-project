@@ -7,8 +7,23 @@ import EndingPopup from "../../components/EndingPopup";
 import Prompt from "../../components/prompt/index";
 import { useAppContext } from "./context";
 import { Habit } from "../../types/types";
+import { Database } from "../../lib/supabase";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Page() {
+
+  const supabase = createClientComponentClient<Database>();
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    async function getUser() {
+      const { data: user } = await supabase.auth.getUser()
+      setUser(user)
+    }
+    getUser();
+  }, [supabase.auth])
+
+  console.log(user);
 
   const {
       currentDate,

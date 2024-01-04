@@ -6,11 +6,6 @@ import { useAppContext } from '../../../src/app/context';
 
 export default function Settings() {
 
-    // const {
-    //     activePage,
-    //     setActivePage,
-    //   } = useAppContext();
-
     return (
         <>
         <Image
