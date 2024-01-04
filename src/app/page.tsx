@@ -12,38 +12,49 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Page() {
 
-  const supabase = createClientComponentClient<Database>();
-  const [user, setUser] = useState(null)
+  // const supabase = createClientComponentClient<Database>();
+  // const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    async function getUser() {
-      const { data: user } = await supabase.auth.getUser()
-      setUser(user)
-    }
-    getUser();
-  }, [supabase.auth])
+  // useEffect(() => {
+  //   async function getUser() {
+  //     const { data: user } = await supabase.auth.getUser()
+  //     setUser(user)
+  //   }
+  //   getUser();
+  // }, [supabase.auth])
 
-  console.log(user);
+  // console.log(user);
 
   const {
-      currentDate,
-      isCommitted,
-      setIsCommitted,
-      habitData,
-      setHabitData,
-      habitLogsArray,
-      setHabitLogsArray,
-      tenDaysPassed,
-      toggleTenDaysPassed,
-      currentScore,
-      maxScore,
-      percentageDecimal,
-      toggleIsCommitted,
-      activePage,
-      setActivePage,
-      goodLuck,
-      toggleGoodLuck,
+    currentDate,
+    isCommitted,
+    setIsCommitted,
+    habitData,
+    setHabitData,
+    habitLogsArray,
+    setHabitLogsArray,
+    tenDaysPassed,
+    toggleTenDaysPassed,
+    currentScore,
+    maxScore,
+    percentageDecimal,
+    toggleIsCommitted,
+    activePage,
+    setActivePage,
+    goodLuck,
+    toggleGoodLuck,
+    user,
+    setUser,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleSignUp,
+    handleSignIn,
+    handleSignOut
   } = useAppContext();
+
+  console.log(user);
 
   const [date, setDate] = useState<boolean>(false);
   const [showGrowth, setShowGrowth] = useState<string>("normal");

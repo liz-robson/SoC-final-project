@@ -15,7 +15,7 @@ export function AppWrapper({ children } : {
     const [isCommitted, setIsCommitted] = useState<boolean>(false);
     const [habitData, setHabitData] = useState<Habit[] | null>(null);
     const [habitLogsArray, setHabitLogsArray] = useState<HabitLog[] | null>(null);
-    const [activePge, setActivePage] = useState<string>("flower");
+    const [activePage, setActivePage] = useState<string>("flower");
     const [goodLuck, setGoodLuck] = useState<boolean>(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -43,7 +43,7 @@ export function AppWrapper({ children } : {
       email,
       password,
       options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
+        emailRedirectTo: `http://localhost:3000/auth/callback`,
       },
     })
     setUser(res.data.user)
