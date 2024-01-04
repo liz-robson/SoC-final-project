@@ -1,7 +1,7 @@
 "use client"
 import { createContext, useState, useContext, useEffect } from 'react';
 import supabase from '../../../lib/initSupabase';
-import { HabitLog, Habit } from "../../../types/types";
+import { HabitLog, Data } from "../../../types/types";
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
 import { Database } from '../../../lib/supabase';
@@ -13,14 +13,14 @@ export function AppWrapper({ children } : {
 }) {
     const currentDate = new Date();
     const [isCommitted, setIsCommitted] = useState<boolean>(false);
-    const [habitData, setHabitData] = useState<Habit[] | null>(null);
+    const [habitData, setHabitData] = useState<Data[] | null>(null);
     const [habitLogsArray, setHabitLogsArray] = useState<HabitLog[] | null>(null);
     const [activePage, setActivePage] = useState<string>("flower");
     const [goodLuck, setGoodLuck] = useState<boolean>(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState<any>(null);
     const supabase = createClientComponentClient<Database>();
 
     // Calculate the current score, max score, and percentage completion
@@ -85,7 +85,7 @@ export function AppWrapper({ children } : {
           setHabitData(data);
         };
         getData();
-      }, []);
+      }, [supabase]);
 
       useEffect(() => {
         // Update isCommitted when habitData changes
@@ -102,7 +102,7 @@ export function AppWrapper({ children } : {
           setHabitLogsArray(habitLogs);
         };
         getHabitLogs();
-      }, []);
+      }, [supabase]);
 
       if (habitData) {
         const startDate = new Date(habitData[0]?.created_at);

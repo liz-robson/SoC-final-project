@@ -132,3 +132,10 @@ export interface PlantProps {
 export interface TickPopupProps {
   closePopup: () => void;
 }
+
+export interface Data {
+  completed: boolean | null;
+    created_at: string;
+    habit_id: string;
+    habit_name: string | null;
+}
