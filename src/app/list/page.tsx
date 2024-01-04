@@ -14,23 +14,34 @@ export default function List() {
 
   const {
     currentDate,
-    isCommitted,
-    setIsCommitted,
-    habitData,
-    setHabitData,
-    habitLogsArray,
-    setHabitLogsArray,
-    tenDaysPassed,
-    toggleTenDaysPassed,
-    currentScore,
-    maxScore,
-    percentageDecimal,
-    toggleIsCommitted,
-    activePage,
-    setActivePage,
-    goodLuck,
-    toggleGoodLuck,
+          isCommitted,
+          setIsCommitted,
+          habitData,
+          setHabitData,
+          habitLogsArray,
+          setHabitLogsArray,
+          tenDaysPassed,
+          toggleTenDaysPassed,
+          currentScore,
+          maxScore,
+          percentageDecimal,
+          toggleIsCommitted,
+          activePage,
+          setActivePage,
+          goodLuck,
+          toggleGoodLuck,
+          user,
+          setUser,
+          email,
+          setEmail,
+          password,
+          setPassword,
+          handleSignUp,
+          handleSignIn,
+          handleSignOut
   } = useAppContext();
+
+  console.log(user);
 
   // function toggleGoodLuck() {
   //   setGoodLuck(!goodLuck);
