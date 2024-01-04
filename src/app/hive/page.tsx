@@ -7,6 +7,7 @@ import plantGrowth4 from "../../../public/plants/temp/plant-growth-4.png";
 import plantGrowthBees from "../../../public/plants/temp/plant-growth-bees-2.png";
 import Image from "next/image";
 import { useAppContext } from "../context";
+import { useRouter } from "next/navigation";
 
 export default function Settings() {
 
@@ -15,10 +16,17 @@ export default function Settings() {
         tenDaysPassed,
         currentScore,
         maxScore,
+        user,
         percentageDecimal,
         activePage,
       } = useAppContext();
 
+      const router = useRouter();
+      
+      if (user === null) {
+        router.push("/login");
+      }
+      else if (user !== null) {
     return (
         <>
 <Prompt
@@ -76,4 +84,4 @@ export default function Settings() {
         <ButtonBar />
         </>
     );
-}
+}}

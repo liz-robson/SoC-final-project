@@ -9,7 +9,7 @@ import { useAppContext } from "./context";
 import { Habit } from "../../types/types";
 import { Database } from "../../lib/supabase";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
 
@@ -55,6 +55,8 @@ export default function Page() {
     handleSignOut
   } = useAppContext();
 
+  const router = useRouter();
+
   console.log(user);
 
   const [date, setDate] = useState<boolean>(false);
@@ -86,7 +88,7 @@ export default function Page() {
   };
 
   if (user === null) {
-    Router.push("/login");
+    router.push("/login");
   }
   else if (user !== null) {
 

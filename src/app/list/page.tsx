@@ -9,6 +9,7 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import ButtonBar from "../../../components/ButtonBar";
 import { HabitLog, Habit } from "../../../types/types";
 import { useAppContext } from "../context";
+import { useRouter } from "next/navigation";
 
 export default function List() {
 
@@ -40,6 +41,8 @@ export default function List() {
           handleSignIn,
           handleSignOut
   } = useAppContext();
+
+  const router = useRouter();
 
   console.log(user);
 
@@ -75,6 +78,11 @@ export default function List() {
   //   };
   //   getHabitLogs();
   // }, [isCommitted]);
+
+  if (user === null) {
+    router.push("/login");
+  }
+  else if (user !== null) {
 
   return (
     <div>
@@ -112,3 +120,4 @@ export default function List() {
     
   );
 }  
+}
