@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest"
   },
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.6",
@@ -21,11 +22,15 @@
     "react-modal": "^3.16.1"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.1.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
-    "typescript": "^5"
+    "jsdom": "^23.0.1",
+    "typescript": "^5",
+    "vitest": "^1.1.1"
   }
 }
