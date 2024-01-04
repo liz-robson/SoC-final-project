@@ -63,7 +63,6 @@ export default function Login() {
         <div className="btn-container">
           <button className="signInBtn" onClick={handleSignIn}>Sign In</button>
           <button className="registerBtn" onClick={handleSignUp}>Register</button>
-          <button className="signInBtn" onClick={handleSignOut}>Sign Out</button>
           </div>
           </div>
           <ButtonBar />

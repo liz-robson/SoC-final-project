@@ -9,6 +9,7 @@ import { useAppContext } from "./context";
 import { Habit } from "../../types/types";
 import { Database } from "../../lib/supabase";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import Router from "next/router";
 
 export default function Page() {
 
@@ -84,6 +85,11 @@ export default function Page() {
     }
   };
 
+  if (user === null) {
+    Router.push("/login");
+  }
+  else if (user !== null) {
+
   return (
     <>
       <Prompt
@@ -129,4 +135,5 @@ export default function Page() {
       <ButtonBar />
     </>
   );
+}
 }

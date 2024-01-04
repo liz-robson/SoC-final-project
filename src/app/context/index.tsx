@@ -61,6 +61,7 @@ export function AppWrapper({ children } : {
     router.refresh()
     setEmail('')
     setPassword('')
+    router.push('/')
   }
 
   const handleSignOut = async () => {
