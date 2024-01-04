@@ -6,71 +6,40 @@ import { Database } from '../../../lib/supabase';
 import BeeWithShadow from '../../../public/assets/bee-with-shadow.png';
 import Image from 'next/image';
 import ButtonBar from '../../../components/ButtonBar';
-import { useAppContext } from '../../../src/app/context';
+import { useAppContext } from "../context";
 
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const router = useRouter()
-  const [user, setUser] = useState(null)
-  const supabase = createClientComponentClient<Database>();
 
-  useEffect(() => {
-    async function getUser() {
-      const { data: user, error } = await supabase.auth.getUser()
-      setUser(user)
-    }
-    getUser();
-  }, [supabase.auth])
-
-  const handleSignUp = async () => {
-    const res = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
-    })
-    setUser(res.data.user)
-    router.refresh()
-    setEmail('')
-    setPassword('')
-  }
-
-  const handleSignIn = async () => {
-    const res = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-    setUser(res.data.user)
-    router.refresh()
-    setEmail('')
-    setPassword('')
-  }
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    router.refresh()
-    setUser(null)
-  }
-
-  console.log({ user})
-
-  // if (loading) {
-  //   return <p>Loading ...</p>
-  // }
-
-  // if (user) {
-  //   return (
-  //     <>
-  //       <h1>You are already signed in</h1>
-  //       <button onClick={handleSignOut}>Sign out</button>
-  //     </>
-  //   )
-  // }
-
-
+  const {
+    currentDate,
+    isCommitted,
+    setIsCommitted,
+    habitData,
+    setHabitData,
+    habitLogsArray,
+    setHabitLogsArray,
+    tenDaysPassed,
+    toggleTenDaysPassed,
+    currentScore,
+    maxScore,
+    percentageDecimal,
+    toggleIsCommitted,
+    activePage,
+    setActivePage,
+    goodLuck,
+    toggleGoodLuck,
+    user,
+    setUser,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleSignUp,
+    handleSignIn,
+    handleSignOut
+  } = useAppContext();
+  
   return (
     <>
       <h1>Welcome Back!</h1>

@@ -1,8 +1,10 @@
 "use client"
-import { createContext, useState, useContext } from 'react';
-import { useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import supabase from '../../../lib/initSupabase';
 import { HabitLog, Habit } from "../../../types/types";
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
+import { Database } from '../../../lib/supabase';
 
 const AppContext = createContext<any>(undefined);
 
@@ -13,14 +15,61 @@ export function AppWrapper({ children } : {
     const [isCommitted, setIsCommitted] = useState<boolean>(false);
     const [habitData, setHabitData] = useState<Habit[] | null>(null);
     const [habitLogsArray, setHabitLogsArray] = useState<HabitLog[] | null>(null);
-    const [activePage, setActivePage] = useState<string>("flower");
+    const [activePge, setActivePage] = useState<string>("flower");
     const [goodLuck, setGoodLuck] = useState<boolean>(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const router = useRouter();
+    const [user, setUser] = useState(null);
+    const supabase = createClientComponentClient<Database>();
 
     // Calculate the current score, max score, and percentage completion
     let [tenDaysPassed, setTenDaysPassed] = useState<boolean>(false);
     let currentScore = habitLogsArray?.length ?? 0;
     let maxScore = habitData?.length ? habitData.length * 10 : 0;
     let percentageDecimal = maxScore ? currentScore / maxScore : 0;
+
+
+  useEffect(() => {
+    async function getUser() {
+      const { data: user, error } = await supabase.auth.getUser()
+      setUser(user)
+    }
+    getUser();
+  }, [supabase.auth])
+
+  const handleSignUp = async () => {
+    const res = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${location.origin}/auth/callback`,
+      },
+    })
+    setUser(res.data.user)
+    router.refresh()
+    setEmail('')
+    setPassword('')
+  }
+
+  const handleSignIn = async () => {
+    const res = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+    setUser(res.data.user)
+    router.refresh()
+    setEmail('')
+    setPassword('')
+  }
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    router.refresh()
+    setUser(null)
+  }
+
+  console.log({ user})
 
     function toggleGoodLuck() {
       setGoodLuck(!goodLuck);
@@ -90,6 +139,15 @@ export function AppWrapper({ children } : {
           goodLuck,
           toggleGoodLuck,
           useAppContext,
+          user,
+          setUser,
+          email,
+          setEmail,
+          password,
+          setPassword,
+          handleSignUp,
+          handleSignIn,
+          handleSignOut
       }}>
             {children}
         </AppContext.Provider>
