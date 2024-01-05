@@ -79,10 +79,10 @@ export default function List() {
   //   getHabitLogs();
   // }, [isCommitted]);
 
-  if (user === null) {
-    router.push("/login");
-  }
-  else if (user !== null) {
+  // if (user === null) {
+  //   router.push("/login");
+  // }
+  // else if (user !== null) {
 
   return (
     <div>
@@ -120,4 +120,4 @@ export default function List() {
     
   );
 }  
-}
+// }

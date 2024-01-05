@@ -87,10 +87,10 @@ export default function Page() {
     }
   };
 
-  if (user === null) {
-    router.push("/login");
-  }
-  else if (user !== null) {
+  // if (user === null) {
+  //   router.push("/login");
+  // }
+  // else if (user !== null) {
 
   return (
     <>
@@ -138,4 +138,4 @@ export default function Page() {
     </>
   );
 }
-}
+// }

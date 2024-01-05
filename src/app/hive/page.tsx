@@ -23,10 +23,10 @@ export default function Settings() {
 
       const router = useRouter();
       
-      if (user === null) {
-        router.push("/login");
-      }
-      else if (user !== null) {
+    //   if (user === null) {
+    //     router.push("/login");
+    //   }
+    //   else if (user !== null) {
     return (
         <>
 <Prompt
@@ -84,4 +84,4 @@ export default function Settings() {
         <ButtonBar />
         </>
     );
-}}
+}
