@@ -368,11 +368,6 @@ header img {
     width: 50px;
   }
 
-  #body-inner {
-    background-image: url('../../public/assets/Habitap-BG-blank.png');
-    padding: 0;
-  }
-
   .signOutBtn, .signInBtn, .registerBtn {
     display: flex;
     justify-content: center;

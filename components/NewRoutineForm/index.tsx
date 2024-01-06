@@ -16,6 +16,8 @@ export default function NewRoutineForm({
   goodLuck,
   toggleGoodLuck,
   setActivePage,
+  tenDaysPassed,
+  toggleTenDaysPassed,
 }: NewRoutineFormProps) {
   const [taskData, setTaskData] = useState<Task[]>(taskDataOriginal);
   const [toggleData, setToggleData] = useState<boolean>(false);
@@ -76,6 +78,8 @@ export default function NewRoutineForm({
           toggleGoodLuck={toggleGoodLuck}
           taskData={taskData}
           setActivePage={setActivePage}
+          tenDaysPassed={tenDaysPassed}
+          toggleTenDaysPassed={toggleTenDaysPassed}
         />
         <NewRoutineList
           taskData={taskData}

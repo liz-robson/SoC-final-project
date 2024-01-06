@@ -9,12 +9,16 @@ const Popup: React.FC<PopupProps> = ({
   setToggleData,
   toggleGoodLuck,
   taskData,
+  tenDaysPassed,
+  toggleTenDaysPassed,
 }) => {
   //a seperate function to handle multiple function calls in the yes button click
-  const handleYesButtonClick = () => {
-    linkToMyList();
-    setToggleData(false);
-    toggleGoodLuck();
+  const handleYesButtonClick = async () => {
+    await linkToMyList();
+    await setToggleData(false);
+    await toggleGoodLuck();
+
+    tenDaysPassed ? await toggleTenDaysPassed() : null;
   };
 
   return (

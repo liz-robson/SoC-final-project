@@ -20,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div id="body-inner">
         <AppWrapper>
           <header>
           <Image src={HabitapBeeHeader} alt="Habitap Header Image" height={100}/>
@@ -29,7 +28,6 @@ export default function RootLayout({
             {children}
             </section>
         </AppWrapper>
-        </div>
       </body>
     </html>
   );

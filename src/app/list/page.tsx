@@ -14,32 +14,19 @@ import { useRouter } from "next/navigation";
 export default function List() {
 
   const {
-    currentDate,
-          isCommitted,
-          setIsCommitted,
-          habitData,
-          setHabitData,
-          habitLogsArray,
-          setHabitLogsArray,
-          tenDaysPassed,
-          toggleTenDaysPassed,
-          currentScore,
-          maxScore,
-          percentageDecimal,
-          toggleIsCommitted,
-          activePage,
-          setActivePage,
-          goodLuck,
-          toggleGoodLuck,
-          user,
-          setUser,
-          email,
-          setEmail,
-          password,
-          setPassword,
-          handleSignUp,
-          handleSignIn,
-          handleSignOut
+    isCommitted,
+    habitData,
+    tenDaysPassed,
+    toggleTenDaysPassed,
+    currentScore,
+    maxScore,
+    percentageDecimal,
+    toggleIsCommitted,
+    activePage,
+    setActivePage,
+    goodLuck,
+    toggleGoodLuck,
+    user,
   } = useAppContext();
 
   const router = useRouter();
@@ -112,6 +99,8 @@ export default function List() {
               goodLuck={goodLuck}
               toggleGoodLuck={toggleGoodLuck}
               setActivePage={setActivePage}
+              tenDaysPassed={tenDaysPassed}
+              toggleTenDaysPassed={toggleTenDaysPassed}
             />
           )}
         </div>

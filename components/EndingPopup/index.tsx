@@ -1,7 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import supabase from "../../lib/initSupabase";
 import {EndingPopupProps} from "../../types/types";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function EndingPopup({
   tenDaysPassed,
@@ -36,9 +39,13 @@ export default function EndingPopup({
     }
     console.log("Ending Okay button clicked");
     toggleIsCommitted();
+  }
+
+  useEffect(() => {
+    // This effect runs after the state has been updated
     console.log(`The value of isCommitted is: ${isCommitted}`);
     console.log(`The value of tenDaysPassed is: ${tenDaysPassed}`);
-  }
+  }, [isCommitted, tenDaysPassed]);
 
   // Function to determine the message based on percentageDecimal
   const getMessage = () => {
