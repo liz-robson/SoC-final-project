@@ -4,7 +4,8 @@ See our deployed app here - https://habitap.vercel.app/
 
 ## Description
 
-A simple yet engaging habit tracking app that helps people build new and better habits in a fun, social and trackable way, without distracting from what’s important.
+Habitap turns goal-setting into a rewarding, fun and collaborative journey. Focus on up to five habits that truly matter, check in daily for just a couple of minutes to update your progress, and witness your virtual plant flourish. No cluttered menus, no endless notifications, just a simple interface that celebrates every small step towards your goal. Share with your friends, cheer each other on, and watch your collective garden grow. 
+
 
 ## MVP
 
