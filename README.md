@@ -22,9 +22,9 @@ Habitap turns goal-setting into a rewarding, fun and collaborative journey. Focu
 
 ## Installation
 
-Clone down the repo with git clone https://github.com/dannykryan/habitap.git
+Clone down the repo with git clone https://github.com/liz-robson/SoC-final-project.git
 
-npm i to install the various dependecies listed below:
+npm i to install the various dependencies listed below:
 
  "dependencies": {
     "@supabase/auth-ui-react": "^0.4.6",
