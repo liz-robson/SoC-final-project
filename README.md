@@ -26,10 +26,11 @@ Clone down the repo with git clone https://github.com/liz-robson/SoC-final-proje
 
 npm i to install the various dependencies listed below:
 
- "dependencies": {
+"dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/auth-ui-react": "^0.4.6",
     "@supabase/auth-ui-shared": "^0.1.8",
-    "@supabase/supabase-js": "^2.39.1",
+    "@supabase/supabase-js": "^2.39.2",
     "lottie-react": "^2.4.0",
     "next": "14.0.3",
     "next-images": "^1.8.5",
