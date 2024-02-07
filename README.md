@@ -44,7 +44,6 @@
 <hr>
 
 <h4>What we are proud of</h4>
-<p><em>"We’re really proud of our app and can’t wait for people to start using it. I would have loved it if we had a little more time to do some testing with a real audience. Personally I’d love to have a few families start using it so that we can get feedback from users of all ages."</em> Danny Ryan</p>
 
 <p><em>"We deployed our app to Vercel in the first week of the build which put is in a great position to practice continuous integration and it really helped us with bug fixes and conflicts.</em> Liz Robson</p>
 
