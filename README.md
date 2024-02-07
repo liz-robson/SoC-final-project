@@ -5,7 +5,7 @@
     </a>
 
 <h4>Introduction</h4>
-<p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were set a challenge and given a brief.</p>
+<p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. 
 
 <hr>
 <h4>My teammates</h4>
