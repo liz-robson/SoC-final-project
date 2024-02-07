@@ -1,56 +1,66 @@
-# Habitap
+<h1>Habitap | Habit Tracking App</h1>
 
-See our deployed app here - https://habitap.vercel.app/
+<a href="https://habitap.vercel.app/">
+        <img src="https://github.com/liz-robson/liz-robson/blob/de8e56883a60d49052f852c4e99244baf9423b6f/habitap.png" alt="Habitap Habit Tracking App" width="500"/>
+    </a>
 
-## Description
+<h4>Introduction</h4>
+<p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were set a challenge and given a brief.</p>
 
-Habitap turns goal-setting into a rewarding, fun and collaborative journey. Focus on up to five habits that truly matter, check in daily for just a couple of minutes to update your progress, and witness your virtual plant flourish. No cluttered menus, no endless notifications, just a simple interface that celebrates every small step towards your goal. Share with your friends, cheer each other on, and watch your collective garden grow. 
+<hr>
+<h4>My teammates</h4>
+<ul>
+    <li>Ana Raducanu</li>
+    <li>Spencer Ley</li>
+    <li>Luis Rodriguez Valido</li>
+    <li>Danny Ryan</li>
+    <li>Me (Liz Robson)</li>
+</ul>
+<hr>
 
+<h4>Defining the Problem</h4>
+<p>During the first week of the project, we started the ideation process by discussing problems we have encountered during the intensive bootcamp experience, for example, staying motivated and finding time for further learning outside of bootcamp hours. This led us to discussing how difficult it is to stick to new habits when you are trying to build them. This led us to discussing how difficult it is to stick to new habits when you are trying to build them.  We've all been there, often it feels like achieving our goals, whether it’s sticking to 100 days of code, mastering a new language, or conquering a marathon starts with good intentions but once the initial excitement fades, motivation vanishes and we're back to our old routines, feeling defeated.</p>
 
-## MVP
+<p>We came to the conclusion that there was potential in pursuing a solution to this problem and it kick-started our inspiration for the app. We undertook user research to test our ideas and extensive competitor research.</p>
 
-- A mobile-first app that uses plant growth to display the user’s progress with their habit that will include:
-- A clean, non-distracting UI that has good accessibility.
-- The ability to create, read, update and delete to-dos.
-- Track progress over time with a monthly score which reflects on the size of a plant - the higher the score, the more developed your plant is.
-- Ability to share progress on social media. 
+<hr>
 
-## Table of Contents
+<h4>Our solution</h4>
+<p>People need a simple yet engaging habit tracking app to help them build habits in a fun, social and accountable way, without distracting from what’s important.</p>
+<p>So we built Habitap, a mobile-first app which turns goal-setting into a rewarding, fun and collaborative journey. Users focus on up to five habits that truly matter, check in daily for just a couple of minutes to update their progress, and witness their virtual plant flourish. No cluttered menus, no endless notifications, just a simple interface that celebrates every small step towards your goal. Share with your friends, cheer each other on, and watch your collective garden grow.</p>
 
-- [Installation](#installation)
-- [Credits](#credits)
+<hr> 
 
-## Installation
+<h4>Tech Stack</h4>
+<ul>
+    <li>Typescript</li>
+    <li>Next.js</li>
+    <li>React</li>
+    <li>Supabase Authentication</li>
+    <li>Supabase Database</li>
+    <li>Figma</li>
+</ul>
 
-Clone down the repo with git clone https://github.com/liz-robson/SoC-final-project.git
+<hr>
 
-npm i to install the various dependencies listed below:
+<h4>What we are proud of</h4>
+<p><em>"We’re really proud of our app and can’t wait for people to start using it. I would have loved it if we had a little more time to do some testing with a real audience. Personally I’d love to have a few families start using it so that we can get feedback from users of all ages."</em> Danny Ryan</p>
 
-"dependencies": {
-    "@supabase/auth-helpers-nextjs": "^0.8.7",
-    "@supabase/auth-ui-react": "^0.4.6",
-    "@supabase/auth-ui-shared": "^0.1.8",
-    "@supabase/supabase-js": "^2.39.2",
-    "lottie-react": "^2.4.0",
-    "next": "14.0.3",
-    "next-images": "^1.8.5",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-modal": "^3.16.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.3",
-    "typescript": "^5"
-  }
+<p><em>"We deployed our app to Vercel in the first week of the build which put is in a great position to practice continuous integration and it really helped us with bug fixes and conflicts.</em> Liz Robson</p>
 
-  ## Credits 
-  Credit goes to our Habiteam of engineers:
-  - Danny Ryan - https://github.com/dannykryan
-  - Liz Robson - https://github.com/liz-robson
-  - Luis Rodriguez Valido - https://github.com/LuisValrod
-  - Ana Raducanu - https://github.com/AnaRaducanu
-  - Spencer Ley - https://github.com/Spencerley
+<p><em>"We encouraged open and transparent communication where team members felt heard and valued. We also recognised that diverse perspectives can lead to better outcomes."</em> Ana Raducanu</p>
+
+<p><em>"We scoped and definted the key features for our app from our huge number of features to ones that our target users wanted the most, which allowed us to focus on having less features but doing those features incredibly well."</em> Spencer Ley</p>
+
+<hr>
+
+<h4>What's next for Habitap</h4>
+
+<p>We would like users to be able to select the plants they choose to grow, rather than a preset one. We would also like to tie the completion of users' plants to a charitable donation to the British Bee Charity. Another feature we would like to build is a team hive - social accountability was an important aspect of our app. We would look at users being able to join a group hive based on filtering and allow users to find other users who are looking to achieve similar goals, or being able to invite your contacts to your hive.
+</p>
+
+<hr>
+
+<h4>Installation</h4>
+<p>Clone down the repo with git clone https://github.com/liz-robson/SoC-final-project.git. Run 'npm i' on your CLI to install the dependencies.</p>
+
