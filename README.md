@@ -53,6 +53,11 @@
 
 <hr>
 
+<h4>Challenges we faced</h4>
+<p>We found Authentication difficult to implement and didn't build it into our app until the last week. The issue being we had already built the majority of the app to render on the client-side whereas Authentication ideally needs to happen on the server-side. We tried many different routes, tried and failed many times! Which made it particularly rewarding when we managed to resolve it in the final days.</p>
+
+<hr>
+
 <h4>What's next for Habitap</h4>
 
 <p>We would like users to be able to select the plants they choose to grow, rather than a preset one. We would also like to tie the completion of users' plants to a charitable donation to the British Bee Charity. Another feature we would like to build is a team hive - social accountability was an important aspect of our app. We would look at users being able to join a group hive based on filtering and allow users to find other users who are looking to achieve similar goals, or being able to invite your contacts to your hive.
