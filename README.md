@@ -67,5 +67,8 @@
 <hr>
 
 <h4>Installation</h4>
-<p>Clone down the repo with git clone https://github.com/liz-robson/SoC-final-project.git. Run 'npm i' on your CLI to install the dependencies.</p>
+<ul>
+        <li>Clone down the repo with git clone <a href="https://github.com/liz-robson/SoC-final-project.git">https://github.com/liz-robson/SoC-final-project.git</a></li>
+        <li>Run 'npm i' on your CLI to install the dependencies</li>
+</ul>
 
