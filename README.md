@@ -44,7 +44,7 @@
 <hr>
 <h4>My Key Contributions</h4>
 <ul>
-        <li>Setting up the databases and authentication on Supabase and connecting the back-end to the front-end</li> 
+        <li>Setting up the databases and authentication on Supabase and connecting it to the front-end</li> 
         <li>Keeping the team on track and focused on sprint goals</li>
         <li>Fixing bugs to ensure CI/CD</li>
 </ul>
