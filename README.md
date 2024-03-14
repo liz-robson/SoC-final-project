@@ -44,8 +44,6 @@
 
 <hr>
 
-<hr>
-
 <h4>Challenges we faced</h4>
 <p>We found Authentication difficult to implement and didn't build it into our app until the last week. The issue being we had already built the majority of the app to render on the client-side whereas Authentication ideally needs to happen on the server-side. We tried many different routes, tried and failed many times! Which made it particularly rewarding when we managed to resolve it in the final days.</p>
 
@@ -57,6 +55,8 @@
     <li>Gained a better understanding of client-side vs. server-side rendering</li>
     <li>Do more user testing throughout the project</li>
 </ul>
+
+<hr>
 
 <h4>What's next for Habitap</h4>
 
