@@ -5,7 +5,7 @@
     </a>
 
 <h4>Introduction</h4>
-<p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. 
+<p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. </p>
 
 <hr>
 <h4>My teammates</h4>
@@ -47,6 +47,7 @@
         <li>Setting up the databases and authentication on Supabase and connecting it to the front-end</li> 
         <li>Keeping the team on track and focused on sprint goals</li>
         <li>Fixing bugs to ensure CI/CD</li>
+        <li>Scrum Master role</li>
 </ul>
 
 <hr>
