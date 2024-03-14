@@ -32,6 +32,7 @@
 <hr> 
 
 <h4>Tech Stack</h4>
+<p>After careful consideration, we chose TypeScript and Next.js as we felt they would enhance our code quality and the app's performance respectively. The component-based architecture of React allowed us to reuse components throughout the app in the front-end and the developer-friendly nature and strong documentation for Supabase's Authentication and Database tools made it a great choice for our back-end. Given the time constraints on the project, we also chose to use these technologies as we had worked with them on the bootcamp and could use the project to advance our skills further. </p>
 <ul>
     <li>Typescript</li>
     <li>Next.js</li>
