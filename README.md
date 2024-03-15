@@ -4,7 +4,7 @@
         <img src="https://github.com/liz-robson/liz-robson/blob/de8e56883a60d49052f852c4e99244baf9423b6f/habitap.png" alt="Habitap Habit Tracking App" width="500"/>
     </a>
 
-<p><a href="https://www.youtube.com/watch?v=G5pAIrBaXzo">Watch the demo</a></p>
+<h6><a href="https://www.youtube.com/watch?v=G5pAIrBaXzo">WATCH THE DEMO</a></h6>
 
 <h4>Introduction</h4>
 <p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. </p>
