@@ -4,6 +4,8 @@
         <img src="https://github.com/liz-robson/liz-robson/blob/de8e56883a60d49052f852c4e99244baf9423b6f/habitap.png" alt="Habitap Habit Tracking App" width="500"/>
     </a>
 
+<p><a href="https://www.youtube.com/watch?v=G5pAIrBaXzo">Watch the demo</a></p>
+
 <h4>Introduction</h4>
 <p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. </p>
 
@@ -77,7 +79,7 @@
 
 <p><em>"We encouraged open and transparent communication where team members felt heard and valued. We also recognised that diverse perspectives can lead to better outcomes."</em> Ana Raducanu</p>
 
-<p><em>"We scoped and definted the key features for our app from our huge number of features to ones that our target users wanted the most, which allowed us to focus on having less features but doing those features incredibly well."</em> Spencer Ley</p>
+<p><em>"We scoped and defined the key features for our app from our huge number of features to ones that our target users wanted the most, which allowed us to focus on having less features but doing those features incredibly well."</em> Spencer Ley</p>
 
 
 <hr>
