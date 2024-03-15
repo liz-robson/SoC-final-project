@@ -90,8 +90,9 @@
         <li>Clone down the repo:</li> 
         <br>
         <code>git clone https://github.com/liz-robson/SoC-final-project.git</code>
+        <br>
         <li>Install dependencies</li>
-                <br>
+        <br>
         <code>npm i</code>
 </ul>
 
