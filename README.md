@@ -62,7 +62,8 @@
 <h4>WHAT WE WOULD DO DIFFERENTLY</h4>
 <ul>
     <li>Utilise the server-side rendering capabilities of Next.js more</li>
-    <li>Gained a better understanding of client-side vs. server-side rendering</li>
+    <li>Gain a better understanding of client-side vs. server-side rendering</li>
+<li>Consider which version of a programming language to use - we chose Next 14 which hadn't been out long so there wasn't a lot of documentation to refer to. In hindsight as beginners, we should've used Next 13.</li>
     <li>Do more user testing throughout the project</li>
 </ul>
 
