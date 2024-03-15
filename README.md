@@ -94,7 +94,7 @@
         </div>
         <br>
         <div>
-        <li>Install dependencies</li>
+        <li>Install dependencies:</li>
         <br>
         <code>npm i</code>
         </div>
