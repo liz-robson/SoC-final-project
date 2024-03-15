@@ -72,6 +72,7 @@
 
 <p>We would like users to be able to select the plants they choose to grow, rather than a preset one. We would also like to tie the completion of users' plants to a charitable donation to the British Bee Charity. Another feature we would like to build is a team hive - social accountability was an important aspect of our app. We would look at users being able to join a group hive based on filtering and allow users to find other users who are looking to achieve similar goals, or being able to invite your contacts to your hive.
 </p>
+<hr>
 
 <h4>WHAT WE WERE PROUD OF</h4>
 
