@@ -87,12 +87,16 @@
 
 <h4>INSTALLATION</h4>
 <ul>
-        <li>Clone down the repo:</li> 
+        <div>
+                <li>Clone down the repo:</li> 
         <br>
         <code>git clone https://github.com/liz-robson/SoC-final-project.git</code>
+        </div>
         <br>
+        <div>
         <li>Install dependencies</li>
         <br>
         <code>npm i</code>
+        </div>
 </ul>
 
