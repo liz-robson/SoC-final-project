@@ -6,7 +6,7 @@
 
 <h6><a href="https://www.youtube.com/watch?v=G5pAIrBaXzo">WATCH THE DEMO</a></h6>
 
-<h4>INTRODUCTIONn</h4>
+<h4>INTRODUCTION</h4>
 <p>In the final month of my 16 week full stack developer bootcamp with the School of Code, we were given our final project brief, to design, build and deploy a web application using the skills we had developed over the last three months of the course. </p>
 
 <hr>
