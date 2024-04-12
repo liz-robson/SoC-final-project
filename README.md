@@ -49,6 +49,7 @@
         <li>Setting up the databases and authentication on Supabase and connecting it to the front-end</li> 
         <li>Keeping the team on track and focused on sprint goals</li>
         <li>Fixing bugs to ensure CI/CD</li>
+        <li>Translated user needs into user stories</li>
         <li>Scrum Master role</li>
 </ul>
 
